@@ -1,0 +1,20 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyTest {
+
+	public static void main(String[] args) {
+		List<Employee> emplist = new ArrayList<>();
+		emplist.add(new Employee("Kafi","COO",80000,"Nator"));
+		emplist.add(new Employee("Nadim","CEO",250000,"Chapai"));
+		emplist.add(new Employee("Mostafa","Developer",50000,"Dhaka"));
+		emplist.add(new Employee("Atik","Manager",70000,"Dhaka"));
+		emplist.add(new Employee("Shuvo","Sr.Developer",65000,"Chapai"));
+		emplist.add(new Employee("Asif","CTO",150000,"Rajshai"));
+
+
+	}
+
+}

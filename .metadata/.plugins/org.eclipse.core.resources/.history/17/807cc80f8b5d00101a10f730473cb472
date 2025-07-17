@@ -1,0 +1,15 @@
+package org.nadim.predefine.functions;
+
+import java.util.function.Function;
+
+public class FunctionChaining_01 {
+
+	public static void main(String[] args) {
+		Function<String, String> f = s -> s.toUpperCase();
+		Function<String, String> f1 = s -> s.substring(0,9);
+		
+		System.out.println(f.andThen(f1).apply("Mostafa Software Ltd."));
+
+	}
+
+}

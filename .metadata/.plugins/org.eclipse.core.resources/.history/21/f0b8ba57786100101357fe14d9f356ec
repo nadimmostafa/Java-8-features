@@ -1,0 +1,26 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyStreamFlatMap {
+
+	public static void main(String[] args) {
+		List<String> l1 = new ArrayList<>();
+		l1.add("Nadim");
+		l1.add("Asif");
+		l1.add("Shuvo");
+		
+		List<String> l2 = new ArrayList<>();
+		l2.add("Java");
+		l2.add("Python");
+		l2.add("Javascript");
+		
+		List<List<String>> l3 = new ArrayList<>();
+		l3.add(l1);
+		l3.add(l2);
+		
+		
+	}
+
+}

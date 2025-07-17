@@ -1,0 +1,13 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyDistinct {
+
+	public static void main(String[] args) {
+		
+		List<String> names = new ArrayList<>();
+	}
+
+}

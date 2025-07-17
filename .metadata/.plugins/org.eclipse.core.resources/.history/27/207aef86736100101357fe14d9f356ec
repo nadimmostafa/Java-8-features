@@ -1,0 +1,33 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/*
+ * it is used for debugging, logging, or observing the elements 
+ * at various stages of a stream's processing. 
+ * For example, you can use peek() to print the value of an element
+ * before and after a map() or filter() operation to understand 
+ * how the data is being transformed.
+ */
+
+public class MyStreamPeek {
+
+	public static void main(String[] args) {
+		List<String> names = new ArrayList<>();
+		names.add("Nadim");
+		names.add("Asif");
+		names.add("Mostafa");
+		names.add("Nadim");
+		names.add("Shuvo");
+		names.add("Asif");
+		names.add("Atik");
+		
+		names.stream()
+			.peek(p->System.out.println(p))
+			.filter(p->p.length()<5)
+			.peek(System.out::println);
+
+	}
+
+}

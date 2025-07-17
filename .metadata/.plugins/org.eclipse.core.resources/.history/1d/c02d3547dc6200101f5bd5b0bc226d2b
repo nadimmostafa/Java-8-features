@@ -1,0 +1,10 @@
+package org.nadim.collectionstream;
+
+public class MyStreamCount {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

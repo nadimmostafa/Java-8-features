@@ -1,0 +1,52 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyStreamFlatMap {
+
+	public static void main(String[] args) {
+		List<String> l1 = new ArrayList<>();
+		l1.add("Nadim");
+		l1.add("Asif");
+		l1.add("Shuvo");
+		
+		List<String> l2 = new ArrayList<>();
+		l2.add("Java");
+		l2.add("Python");
+		l2.add("Javascript");
+		
+		List<List<String>> l3 = new ArrayList<>();
+		l3.add(l1);
+		l3.add(l2);
+		
+		// normal way to print
+		for(int i=0;i<l3.size();i++) {
+			for(int j=0;j<l3.get(i).size();j++) {
+				//System.out.println("Elements: "+l3.get(i).get(j));
+			}
+			
+		}
+		
+		//or
+		for(List<String> l4:l3) {
+			for(String s:l4) {
+				//System.out.println(s);
+			}
+		}
+		
+		
+		//or
+		for(int i=0;i<l3.size();i++) {
+			List<String> l4 = l3.get(i);
+			for(int j=0;j<l4.size();j++) {
+				System.out.println("Elements: "+l3.get(i).get(j));
+			}
+			
+		}
+		
+		
+		
+	}
+
+}

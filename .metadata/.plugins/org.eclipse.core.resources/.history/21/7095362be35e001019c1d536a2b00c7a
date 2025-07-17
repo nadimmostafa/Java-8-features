@@ -1,0 +1,60 @@
+package org.nadim.collectionenhancement;
+
+import java.util.ArrayList;
+import java.util.function.Predicate;
+
+public class CollectionEnhancements {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<Integer> al = new ArrayList<>();
+		al.add(10);
+		al.add(20);
+		al.add(125);
+		al.add(6);
+		al.add(05);
+		
+		
+		Predicate<Integer> p = n -> n%2!=0;
+//		for(int i=0; i<al.size();i++) {
+//			System.out.println(al.get(i));
+//		}
+		
+		//al.forEach((a)-> System.out.println(a));
+		al.forEach((a)-> {
+			if(p.test(a)) {
+				al.remove(a);			}
+		});
+		
+		al.forEach(System.out::println);
+		/*
+		
+		List<Employee> list = new ArrayList<>();
+		list.add(new Employee("Nadim","CEO",250000,"Chapai"));
+		list.add(new Employee("Asif","CTO",150000,"Rajshai"));
+		list.add(new Employee("Kafi","COO",80000,"Nator"));
+		list.add(new Employee("Atik","Manager",70000,"Dhaka"));
+		list.add(new Employee("Shuvo","Sr.Developer",65000,"Chapai"));
+		list.add(new Employee("Mostafa","Developer",50000,"Dhaka"));
+		
+		
+		// remove employee who name start with 'M'
+		//using normal way
+		for(int i=0;i<list.size();i++) {
+			if(list.get(i).getName().startsWith("M")) {
+				list.remove(i);
+			}
+		}
+		
+		//using Java 1.8 
+		
+		list.removeIf(e -> e.getName().startsWith("K"));
+		
+		
+		System.out.println("====================");
+		list.forEach((m)->System.out.println(m.getName()));
+		*/
+	}
+
+}

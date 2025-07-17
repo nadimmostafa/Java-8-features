@@ -1,0 +1,15 @@
+package org.nadim.functional.interfaces;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Popcorn p=()-> {System.out.println("Spicy");};
+		p.teste();
+
+	}
+
+}
+
+interface Popcorn{
+	public void teste();
+}

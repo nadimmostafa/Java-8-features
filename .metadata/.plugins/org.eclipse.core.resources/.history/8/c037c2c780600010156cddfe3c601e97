@@ -1,0 +1,87 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class MyStream {
+
+	public static void main(String[] args) {
+		 
+		List<Employee> emplist = new ArrayList<>();
+		emplist.add(new Employee("Kafi","COO",80000,"Nator"));
+		emplist.add(new Employee("Nadim","CEO",250000,"Chapai"));
+		emplist.add(new Employee("Mostafa","Developer",50000,"Dhaka"));
+		emplist.add(new Employee("Atik","Manager",70000,"Dhaka"));
+		emplist.add(new Employee("Shuvo","Sr.Developer",65000,"Chapai"));
+		emplist.add(new Employee("Asif","CTO",150000,"Rajshai"));
+
+		
+		List<String> empName = new ArrayList<>();
+		
+		for(int i=0; i<emplist.size();i++) {
+			
+			if(emplist.get(i).getName().startsWith("A")) {
+				empName.add(emplist.get(i).getName());
+				//System.out.println(emplist.get(i).getName()+" from "+emplist.get(i).getCity());
+			}
+		}
+		
+		// using java 8
+		// Print all employee whose name start with A
+		//emplist.stream().filter(s->s.getName().startsWith("A")).forEach(System.out::println);
+		
+		//Create a new arraylist and store all employee name whose name start with A
+		List<String> ename = emplist.stream().filter(s->s.getName().startsWith("A")).map(s->s.getName()).collect(Collectors.toList());
+		//ename.forEach(System.out::println);
+		
+		
+		List<Integer> list = new ArrayList<>();
+		list.add(15);
+		list.add(5);
+		list.add(55);
+		list.add(69);
+		list.add(38);
+		list.add(90);
+		list.add(8);
+		list.add(14);
+		list.add(58);
+		
+		// write a program to print min number for given List
+		
+		
+		//int min = list.stream().min((t1,t2)->(t1<t2)?-1:(t1==t2)?0:1).get();
+		//or
+		int minimum = list.stream().min((t1,t2)->t1.compareTo(t2)).get();
+		//System.out.println(minimum);
+		
+		// write a program to print max number for given List
+		//int max = list.stream().max((t1,t2)->(t1<t2)?-1:(t1==t2)?0:1).get();
+		//or
+		//int maximum = list.stream().max((t1,t2)->t1.compareTo(t2)).get();
+		//or
+		int maximum = list.stream().min((t1,t2)->t2.compareTo(t1)).get();
+		//System.out.println(maximum);
+		
+		/*
+		//write a program to print the employee name who is getting maximum salary
+		Employee e = emplist.stream().min((t1,t2) ->(t1.getSalary()<t2.getSalary())?-1:(t1.getSalary()==t2.getSalary())?0:1).get();
+		System.out.println(e.getName());
+		*/
+		
+		//sort the employee based on salary
+		/*
+		emplist.stream().sorted(
+				(t1,t2)->(t1.getSalary()<t2.getSalary())?1:t1.getSalary()==t2.getSalary()?0:-1)
+				.forEach((n)-> System.out.println(n.getName()));
+		*/
+		
+		// write a program to print only distinct city 
+		emplist.stream().map(city->city.getCity()).distinct().forEach(System.out::println);
+		
+		
+		//emplist.stream().skip();
+	}
+
+}

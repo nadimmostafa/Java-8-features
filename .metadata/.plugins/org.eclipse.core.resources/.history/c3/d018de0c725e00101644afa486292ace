@@ -1,0 +1,10 @@
+package org.nadim.collectionenhancement;
+
+public class Employee {
+	String name;
+	String designation;
+	float salary;
+	String city;
+	
+	
+}

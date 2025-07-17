@@ -1,0 +1,13 @@
+package org.nadim.predefine.primitiveFI;
+
+import java.util.function.IntPredicate;
+
+public class DemoPredicate {
+
+	public static void main(String[] args) {
+		
+		IntPredicate p = 
+
+	}
+
+}

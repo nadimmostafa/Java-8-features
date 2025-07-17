@@ -1,0 +1,17 @@
+package org.nadim.collectionstream;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class CollectorsGroupingBy {
+
+	public static void main(String[] args) {
+		List<String> animals = List.of("cat", "dog", "elephant", "bee", "ant","Tiger","Lion");
+		
+		Long total = animals.stream().collect(Collectors.counting());	
+		System.out.println(total);
+		
+		
+	}
+
+}

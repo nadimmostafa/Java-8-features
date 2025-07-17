@@ -1,0 +1,16 @@
+package org.nadim.method.references;
+
+public class MyRunnable {
+	
+	public void m() {
+		for(int i=0; i<5;i++) {
+			System.out.println("From Child Thread "+i);
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

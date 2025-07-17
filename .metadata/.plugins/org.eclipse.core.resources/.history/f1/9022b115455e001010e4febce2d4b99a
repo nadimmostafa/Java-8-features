@@ -1,0 +1,16 @@
+package org.nadim.constructor.references;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Sample{
+	Sample(){
+		System.out.println("Sample Class Constructor");
+	}
+}

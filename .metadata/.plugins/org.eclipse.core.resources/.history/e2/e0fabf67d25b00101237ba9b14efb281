@@ -1,0 +1,5 @@
+package org.nadim.functional.interfaces;
+
+public interface FuncationalInterfaceWithInheritance {
+
+}

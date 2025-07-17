@@ -1,0 +1,23 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class CollectorsGroupingBy {
+
+	public static void main(String[] args) {
+		String [] animals= {"cat", "dog", "elephant", "bee","Tiger","Lion","Deer"};
+		List<String> words = new ArrayList<>(Arrays.asList(animals));
+		
+		Long total = words.stream().collect(Collectors.counting());	
+		//System.out.println(total); //7
+		
+		Map <Integer, List <String>> groupList = words.stream().collect(Collectors.groupingBy(String::length));
+		System.out.println(groupList);
+		
+	}
+
+}

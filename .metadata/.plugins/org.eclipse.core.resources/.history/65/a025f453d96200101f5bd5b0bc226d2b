@@ -1,0 +1,15 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyStreamForEach {
+
+	public static void main(String[] args) {
+		
+		//for list or set collections
+		
+		List<Integer> list = new ArrayList<>(); 
+	}
+
+}

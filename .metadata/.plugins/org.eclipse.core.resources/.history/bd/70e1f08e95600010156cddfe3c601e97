@@ -1,0 +1,22 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyDistinct {
+
+	public static void main(String[] args) {
+		
+		List<String> names = new ArrayList<>();
+		names.add("Nadim");
+		names.add("Asif");
+		names.add("Mostafa");
+		names.add("Nadim");
+		names.add("Shuvo");
+		names.add("Asif");
+		names.add("Atik");
+		
+		names.stream().distinct().forEach(System.out::println);
+	}
+
+}

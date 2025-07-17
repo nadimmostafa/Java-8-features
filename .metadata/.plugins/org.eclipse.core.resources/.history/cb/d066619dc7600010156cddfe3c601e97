@@ -1,0 +1,12 @@
+package org.nadim.collectionstream;
+
+import java.util.List;
+
+public class CollectorsGroupingBy {
+
+	public static void main(String[] args) {
+		List<String> words = List.of("cat", "dog", "elephant", "bee", "ant");
+		
+	}
+
+}

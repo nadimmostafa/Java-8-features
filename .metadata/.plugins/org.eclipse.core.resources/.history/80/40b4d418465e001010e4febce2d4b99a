@@ -1,0 +1,21 @@
+package org.nadim.constructor.references;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Demo d = () -> new Sample();
+		d.get();
+
+	}
+
+}
+
+class Sample{
+	Sample(){
+		System.out.println("Sample Class Constructor");
+	}
+}
+
+interface Demo{
+	public Sample get();
+}

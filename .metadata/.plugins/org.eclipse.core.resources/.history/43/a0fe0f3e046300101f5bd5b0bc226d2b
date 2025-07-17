@@ -1,0 +1,61 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+public class MyStreamMin {
+
+	public static void main(String[] args) {
+		
+		List<String> fruits = new ArrayList<>();
+		fruits.add("Apple");
+		fruits.add("Mango");
+		fruits.add("Banana");
+		fruits.add("Date");
+		fruits.add("Cherry");
+		fruits.add("Orange");
+		fruits.add("Blueberry");
+		fruits.add("Kiwi");
+		
+		//write a program to print min length of given List<String>
+		Optional<String> op=fruits.stream().min((f1,f2)->(f1.length()>f2.length()?1:f1.length()==f2.length()?0:-1));
+		
+		if(op.isPresent()) {
+			//System.out.println(op.get());
+		}
+		
+		//or
+		String minLength = fruits.stream().min((f1,f2)->(f1.length()>f2.length()?1:f1.length()==f2.length()?0:-1)).get();
+		//System.out.println(minLength);
+		
+		//or
+		String min=fruits.stream().min((t1,t2)->t1.compareTo(t2)).get();
+		System.out.println(min);
+		
+		
+		List<Employee> emplist = new ArrayList<>();
+		emplist.add(new Employee(101,"Kafi","COO",80000,"Nator"));
+		emplist.add(new Employee(105,"Nadim","CEO",250000,"Chapai"));
+		emplist.add(new Employee(104,"Mostafa","Developer",50000,"Dhaka"));
+		emplist.add(new Employee(102,"Atik","Manager",70000,"Dhaka"));
+		emplist.add(new Employee(109,"Shuvo","Sr.Developer",65000,"Chapai"));
+		emplist.add(new Employee(103,"Asif","CTO",150000,"Rajshai"));
+		
+		//write a program to print the employee name who is getting maximum salary
+		Optional<Employee> optionalEmp=emplist.stream().min((t1,t2) ->(t1.getSalary()<t2.getSalary())?-1:(t1.getSalary()==t2.getSalary())?0:1);
+		
+		Employee e;
+		if(optionalEmp.isPresent()) {
+			e = optionalEmp.get();
+			//System.out.println(e.getName());
+		}
+		
+		//or
+		e =emplist.stream().min((t1,t2) ->(t1.getSalary()<t2.getSalary())?-1:(t1.getSalary()==t2.getSalary())?0:1).get();
+		System.out.println(e.getName());
+		
+
+	}
+
+}

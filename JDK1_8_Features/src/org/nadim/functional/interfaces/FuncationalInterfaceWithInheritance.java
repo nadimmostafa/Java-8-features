@@ -1,0 +1,14 @@
+package org.nadim.functional.interfaces;
+
+@FunctionalInterface
+public interface FuncationalInterfaceWithInheritance {
+	void m();
+}
+
+@FunctionalInterface
+interface Interf extends FuncationalInterfaceWithInheritance{
+	
+	default void show() {
+		System.out.println("It is also functional Interface");
+	}
+}

@@ -1,0 +1,54 @@
+package org.nadim.collectionstream;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class MyDistinct {
+
+	public static void main(String[] args) {
+		
+		List<String> names = new ArrayList<>();
+		names.add("Nadim");
+		names.add("Asif");
+		names.add("Mostafa");
+		names.add("Nadim");
+		names.add("Shuvo");
+		names.add("Asif");
+		names.add("Atik");
+		
+		// filter the duplicate elements
+		//names.stream().distinct().forEach(System.out::println);
+		
+		List<Employee> emplist = new ArrayList<>();
+		emplist.add(new Employee(101,"Kafi","COO",80000,"Nator"));
+		emplist.add(new Employee(105,"Nadim","CEO",250000,"Chapai"));
+		emplist.add(new Employee(103,"Mostafa","Developer",50000,"Dhaka"));
+		emplist.add(new Employee(102,"Atik","Manager",70000,"Dhaka"));
+		emplist.add(new Employee(101,"Shuvo","Sr.Developer",65000,"Chapai"));
+		emplist.add(new Employee(103,"Asif","CTO",150000,"Rajshai"));
+		
+		//write a program to printout distinct employee city
+		List<String> cities= emplist.stream().map(e->e.getCity()).distinct().collect(Collectors.toList());
+		//cities.forEach(System.out::println);
+		
+		//print all employees with distinct employee id
+		//emplist.stream().distinct().forEach(System.out::println);
+		/*
+			this is not working with distinct because our defined class is not override 
+			the hashCode() and equals() methods. Object class hashCode() and equals() 
+			methods will execute 
+			if we want perform distinct operations on user defined class 
+			then override the hashCode() and equals() methods and apply logic.
+		*/
+		
+		//to convert my list into HashMap
+		Map<Integer,Employee> empMap = emplist.stream().distinct()
+				.collect(Collectors.toMap(id->id.empId, emp->emp));
+		
+		System.out.println(empMap);
+		
+	}
+
+}

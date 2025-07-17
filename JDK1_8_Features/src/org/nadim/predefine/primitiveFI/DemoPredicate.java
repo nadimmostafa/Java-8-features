@@ -1,0 +1,22 @@
+package org.nadim.predefine.primitiveFI;
+
+import java.util.function.DoublePredicate;
+import java.util.function.IntPredicate;
+import java.util.function.LongPredicate;
+
+public class DemoPredicate {
+
+	public static void main(String[] args) {
+		
+		IntPredicate p = n -> n>10;
+		p.test(15);
+		
+		LongPredicate p2 = nn -> nn<50l;
+		p2.test(52);
+		
+		DoublePredicate d = n -> n%2==0;
+		d.test(52);
+
+	}
+
+}
