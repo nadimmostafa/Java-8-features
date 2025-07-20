@@ -16,7 +16,8 @@ public class CollectorsGroupingBy {
 		//System.out.println(total); //7
 		
 		//group the elements based on element length
-		Map <Integer, List <String>> groupList = words.stream().collect(Collectors.groupingBy(String::length));
+		Map <Integer, List <String>> groupList = words.stream()
+				.collect(Collectors.groupingBy(String::length));
 		System.out.println(groupList); // {3=[cat, dog, bee], 4=[Lion, Deer], 5=[Tiger], 8=[elephant]}
 		
 		//group the elements and count based on length

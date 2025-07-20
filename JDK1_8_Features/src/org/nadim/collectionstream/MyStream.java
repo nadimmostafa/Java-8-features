@@ -33,7 +33,9 @@ public class MyStream {
 		//emplist.stream().filter(s->s.getName().startsWith("A")).forEach(System.out::println);
 		
 		//Create a new arraylist and store all employee name whose name start with A
-		List<String> ename = emplist.stream().filter(s->s.getName().startsWith("A")).map(s->s.getName()).collect(Collectors.toList());
+		ArrayList<String> ename = emplist.stream()
+				.filter(s->s.getName().startsWith("A"))
+				.map(s->s.getName()).collect(Collectors.toCollection(()-> new ArrayList<>()));
 		//ename.forEach(System.out::println);
 		
 		
@@ -62,7 +64,7 @@ public class MyStream {
 		//int maximum = list.stream().max((t1,t2)->t1.compareTo(t2)).get();
 		//or
 		int maximum = list.stream().min((t1,t2)->t2.compareTo(t1)).get();
-		System.out.println(maximum);
+		//System.out.println(maximum);
 		
 		//sort the employee based on salary
 		/*
@@ -72,7 +74,7 @@ public class MyStream {
 		*/
 		
 		// write a program to print only distinct city 
-		emplist.stream().map(city->city.getCity()).distinct().forEach(System.out::println);
+		//emplist.stream().map(city->city.getCity()).distinct().forEach(System.out::println);
 		//emplist.stream().skip();
 	}
 

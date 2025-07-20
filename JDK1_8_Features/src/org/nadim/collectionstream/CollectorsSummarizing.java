@@ -5,6 +5,8 @@ import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.nadim.streams.collectors.Test;
+
 public class CollectorsSummarizing {
 
 	public static void main(String[] args) {
@@ -24,7 +26,7 @@ public class CollectorsSummarizing {
 		System.out.println("Total Employees Salary "+statisticReport.getSum());
 		System.out.println("Maximum Salary to Pay is "+statisticReport.getMax());
 		System.out.println("Minimum Salary to Pay is "+statisticReport.getMin());
-		System.out.println("Avarage Salary is " +statisticReport.getAverage());
+		System.out.println("Ave0rage Salary is " +statisticReport.getAverage());
 	}
 
 }
